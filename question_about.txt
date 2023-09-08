@@ -1,0 +1,225 @@
+#print("file 2 dev B")
+"""
+1 question:
+a = [1,2,3,4]
+print(a[3]) #output=4 
+but when i want to print(a[4]) its shows me index error
+how to solve this problem used the exception"""
+"""try:
+	a=[1,2,3,4]
+	print(a[3])
+except ZeroDivisionError:
+	print("Denominator cannot be 0.")
+except IndexError:
+	print("Index out of bond.")"""
+	
+
+"""2 question:
+Type error-->
+a=10
+c=10
+a1="ten"
+c1="sss"
+print(a+c)# 20
+print(a1+c1)# tensss
+print(a+a1)# type error
+print(c+c1)# type error
+how to handle this program used exception
+"""
+
+"""try:
+	a=10
+	c=10
+	a1="ten"
+	c1="sss"
+	print(a+c)# 20
+	print(a1+c1)#tensss
+	print(a+a1)#type error
+	print(c+c1)#type error
+except TypeError:
+	print("Type Error")"""
+
+"""3: question
+keyerror:
+dic={'a':1,'b':33,'c':88,'z':44}
+print(dic['a'])#-->o/p=1
+print(dic['c'])# --->o/p=88
+
+print(dic['x'])# -->o/p= keyerror 
+how to handle this program used exception
+
+answer
+dic={'a':1,'b':33,'c':88,'z':44}
+try:
+	print(dic['a'])
+	print(dic['c'])
+except keyError:
+	print(dic['x'])
+
+4:question
+import math
+c=30 
+a=-10 
+print(math.sqrt(c))# o/p-->900
+print(math.sqrt(a))# value error 
+how to handle this program used exception
+
+answer
+import math
+try:
+	c=30
+	a=-10
+	print(math.sqrt(c))# o/p-->900
+except ValueError:
+	print(math.sqrt(a))# value error
+
+question 5
+take any your own example 
+create class display the properties
+"""
+#question 6
+#create class child enhance parent some properties
+"""class parent(object):
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	def display(self):
+		print(self.name)
+		print(self.age)
+class child(parent):
+	def __init__(self,name,age,id,school):
+		self.id=id  
+		self.school=school
+		parent.__init__(self,name,age)
+m=child("shaikh",56,2,"fajandar")
+m.display()
+"""
+
+
+#question 7
+#create class used the multilevel inheritance
+"""class Grandfather:
+    def __init__(self, grandfathername):
+		self.grandfathername = grandfathername
+class Father(Grandfather):
+	def __init__(self, fathername, grandfathername):
+		self.fathername = fathername
+		Grandfather.__init__(self, grandfathername)
+class Son(Father):
+	def __init__(self, sonname, fathername, grandfathername):
+		self.sonname = sonname
+		Father.__init__(self, fathername, grandfathername)
+
+	def print_name(self):
+		print('Grandfather name :', self.grandfathername)
+		print("Father name :", self.fathername)
+		print("Son name :", self.sonname)
+s1 = Son('Prince', 'Rampal', 'Lal mani')
+print(s1.grandfathername)
+s1.print_name()
+"""
+
+#multiple inheritance
+"""class Mother:
+	mothername = ""
+
+	def mother(self):
+		print(self.mothername)
+
+class Father:
+	fathername = ""
+
+	def father(self):
+		print(self.fathername)
+
+class Son(Mother, Father):
+	def parents(self):
+		print("Father :", self.fathername)
+		print("Mother :", self.mothername)
+
+s1 = Son()
+s1.fathername = "RAM"
+s1.mothername = "SITA"
+s1.parents()
+"""
+
+#question 8
+#diffrence between constructor and method using example
+"""class keyboard:
+	def __init__(self,language,connection):
+		self.language=language
+		self.connection=connection
+
+	def defination(self):
+		print("keyboard is input device")
+
+	def number_of_key(self):
+		print("there are 101 key")
+my_keyboard=keyboard('English', 'Wrireless')
+print(my_keyboard.language)
+"""
+#method
+"""class AboutMe:
+	def __init__(self,name,address,occupation):
+		self.name=name
+		self.address=address
+		self.occupation=occupation
+
+	def talk(self):
+		print(f"my name is {self.name}. i am from {self.address}. and "f" i am a {self.occupation}")
+mahvash=AboutMe('mahvash shaikh','solapur','teacher')
+mahvash.talk()"""
+
+#question 9
+#create class using static method nd class method"""
+#answer
+#static method:
+"""class MyClass:
+	def __init__(self, value):
+		self.value = value
+
+	@staticmethod
+	def get_max_value(x, y):
+		return max(x, y)
+
+# Create an instance of MyClass
+obj = MyClass(10)
+
+print(MyClass.get_max_value(20, 30))
+
+print(obj.get_max_value(20, 30))
+"""
+
+#class method example:
+"""class MyClass:
+	def __init__(self, value):
+		self.value = value
+
+	def get_value(self):
+		return self.value
+
+# Create an instance of MyClass
+obj = MyClass(10)
+
+# Call the get_value method on the instance
+print(obj.get_value()) # Output: 10"""
+
+#answer
+#static and class method exampl
+"""class calculator:
+	@staticmethod
+	def addNumbers(x,y):
+		return x+y 
+print(calculator.addNumbers(15,110))
+
+#class
+class student:
+	def __init__(self,name):
+		self.name=name 
+	def display(self):
+		return self.name    
+s1=student("john")
+s2=student("johny")
+
+print(s1.display())
+print(s2.display())"""
